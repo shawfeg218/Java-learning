@@ -29,10 +29,12 @@ public class Account {
     }
 
     public void withdraw(double withdrawAmount){
-        if(withdrawAmount > 0.0 && balance > 0.0){
+        if(withdrawAmount <= balance){
             balance = balance - withdrawAmount;
+            System.out.println("Withdraw:" + withdrawAmount);
+            System.out.println("Your account balance After withdraw:" + balance);
         }else {
-            System.out.println("Balance:" + balance);
+            System.out.println("Withdrawal amount exceeded account balance");
         }
     }
 
