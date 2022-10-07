@@ -1,27 +1,34 @@
-import java.util.Scanner;
 public class BMICalculator {
-    public static void main(String[] args) throws Exception {
-        
-        Scanner input = new Scanner(System.in);
-        double height, weight;
-        
-        System.out.println("Enter your height:");
-        height = input.nextDouble()/100;
-        System.out.println("Enter your weight:");
-        weight = input.nextDouble();
-        double BMI = weight / (height*height);
-        
-        if(BMI <= 18.5){
-            System.out.println("You are skinny!");
-        }else if(BMI <= 24.9){
-            System.out.println("You are so fit!");
-        }else if(BMI <= 29.9){
-            System.out.println("You are overweight!");
-        }else{
-            System.out.println("You are obese!");
-        }
-        
+    
+    private String name;
+    private double height;
+    private double weight;
+    private double BMI;
 
+
+    public BMICalculator(String name, double height, double weight) {
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+    }
+
+    public void Calculate() {
+        
+        double heightInM = height/100;
+        BMI = weight / (heightInM*heightInM);
+        
+    }
+
+    public void PrintResult() {
+        if(BMI <= 18.5){
+            System.out.printf("%s: height:%.1f weight:%.1f BMI:%.2f, You are skinny!%n" ,name, height, weight, BMI);
+        }else if(BMI <= 24.9){
+            System.out.printf("%s: height:%.1f weight:%.1f BMI:%.2f, You are so fit!%n" ,name, height, weight, BMI);
+        }else if(BMI <= 29.9){
+            System.out.printf("%s: height:%.1f weight:%.1f BMI:%.2f, You are overweight!%n" ,name, height, weight, BMI);
+        }else{
+            System.out.printf("%s: height:%.1f weight:%.1f BMI:%.2f, You are obese!%n" ,name, height, weight, BMI);
+        }
     }
 
 }
