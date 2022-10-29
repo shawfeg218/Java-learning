@@ -10,16 +10,16 @@ public class MaximumFinder{
         
         System.out.println("The max number is: " + result);
     }
-    
+
     public static int maximum(int a, int b, int c){
-        int max = a;
-        if(b >= max){
-            max = b;
-        }
-        if(c >= max){
-            max = c;
-        }
+//        int max = a;
+//        if(b >= max){
+//            max = b;
+//        }
+//        if(c >= max){
+//            max = c;
+//        }
+        return Math.max(a,Math.max(b,c));
         
-        return max;
     }
 }
