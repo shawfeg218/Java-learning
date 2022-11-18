@@ -1,3 +1,6 @@
+
+package investcalculator;
+
 import java.util.Scanner;
 
 public class Asset {
@@ -13,31 +16,7 @@ public class Asset {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public double[] getPriceArr() {
-        return priceArr;
-    }
-
-    public double[] getRateArr() {
-        return rateArr;
-    }
-
-    public double getERate() {
-        return ERate;
-    }
-
-    public double getStandardDeviation() {
-        return standardDeviation;
-    }
-
-    public double getVariance() {
-        return variance;
-    }
-
-    public void printPrice() {
+    public void getPrice() {
         for (int i = 0; i < priceArr.length; i++) {
             System.out.printf("%d: %.2f %n", (2017 + i), priceArr[i]);
         }
@@ -45,7 +24,7 @@ public class Asset {
 
     public void printResult() {
         System.out.println(name);
-        // printPrice();
+        // getPrice();
         System.out.println("Expected rate: " + Math.floor(ERate * 100) + "%");
         System.out.println("Standard deviation: " + Math.floor(standardDeviation * 100) + "%");
         System.out.println("Variance: " + Math.floor(variance * 100) + "%");

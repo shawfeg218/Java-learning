@@ -3,20 +3,19 @@ package gradesapplication;
 import java.util.Scanner;
 public class Grades{
     private String courseName;
-    private int a=0, b=0, c=0, d=0, f=0;
+    private int a,b,c,d,f = 0;
     public Grades(String courseName){
         this.courseName = courseName;
     }
     public void doGrades(){
+        System.out.println("Enter the scores util # to display grades:");
         Scanner input = new Scanner(System.in);
-        int score, flag;
-        System.out.println("Enter the scores until #:");
+        int grade;
         while(!input.hasNext("#")){
-            score = input.nextInt();
-            flag = score/10;
-            switch(flag){
+            grade = input.nextInt();
+            switch(grade/10){
                 case 10:
-                case 9: 
+                case 9:
                     a++;
                     break;
                 case 8:
@@ -33,10 +32,8 @@ public class Grades{
                     break;
             }
         }
-        
     }
-    
     public void displayGrades(){
-        System.out.printf("Course name: %s%nGrade A: %d%nGrade B: %d%nGrade C: %d%nGrade D: %d%nGrade F: %d%n", courseName, a, b, c, d, f);
+        System.out.printf("Course name: %s%nA: %d%nB: %d%nC: %d%nD: %d%nf: %d%n", courseName, a, b, c, d, f);
     }
 }
