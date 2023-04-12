@@ -1,11 +1,43 @@
+//public class Shape_test {
+//    public static void main(String[] args){
+//        Shape f1 = new Circle(10);
+//        Shape f2 = new Square(8);
+//        Circle c = (Circle)f1;
+//        Square s = (Square)f2;
+//        System.out.printf("The sum of areas of f1 and f2 is %.2f\n", f1.area()+f2.area());
+//        System.out.printf("The radius of f1 is %d, and side of f2 is %d\n", c.getRadius(), s.getSide());
+//    }
+//}
+//
+//abstract class Shape {
+//    public abstract double area();
+//}
+//
+//class Circle extends Shape {
+//    private int radius;
+//
+//    public Circle(int radius) {
+//        this.radius = radius;
+//    }
+//
+//    public int getRadius() {
+//        return radius;
+//    }
+//    
+//    public double area(){
+//        return radius * radius * Math.PI;
+//    }
+//    
+//}
+
 public class Shape_test {
     public static void main(String[] args){
         Shape f1 = new Circle(10);
         Shape f2 = new Square(8);
         Circle c = (Circle)f1;
         Square s = (Square)f2;
-        System.out.printf("The sum of areas of f1 and f2 is %.2f\n", f1.area()+f2.area());
-        System.out.printf("The radius of f1 is %d, and side of f2 is %d\n", c.getRadius(), s.getSide());
+        System.out.printf("The radius is %d, the side is %d\n", c.getRadius(), s.getSide());
+        System.out.printf("The area of f1 is %.2f, and f2 is %.2f", f1.area(), f2.area());
     }
 }
 
@@ -22,6 +54,10 @@ class Circle extends Shape {
 
     public int getRadius() {
         return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
     
     public double area(){
@@ -40,8 +76,13 @@ class Square extends Shape {
     public int getSide() {
         return side;
     }
+
+    public void setSide(int side) {
+        this.side = side;
+    }
     
     public double area(){
         return side * side;
     }
+    
 }
